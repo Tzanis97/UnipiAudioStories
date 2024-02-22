@@ -7,6 +7,8 @@
     android:background="#0080B1"
     tools:context=".MainActivity">
 
+
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -57,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="20dp"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="#86C3B4"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="10dp">
 
@@ -68,17 +70,30 @@
 
                     <ImageView
                         android:id="@+id/imageViewStory1"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/littleredridinghoodcover" />
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:orientation="vertical">
 
-                    <TextView
+                        <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
-                        android:text="Story one" />
+                        android:fontFamily="casual"
+                        android:text="Little red riding hood"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
 
@@ -88,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="20dp"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="#10489A"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="15dp">
 
@@ -99,17 +114,31 @@
 
                     <ImageView
                         android:id="@+id/imageStory2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/cinderellacover" />
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:text="Story two" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:fontFamily="casual"
+                            android:text="Cinderella"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
 
@@ -119,7 +148,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="20dp"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="#FCFEFD"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="15dp">
 
@@ -130,17 +159,30 @@
 
                     <ImageView
                         android:id="@+id/imageStory3"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/uglyducklingcover" />
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:text="Story three" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:fontFamily="casual"
+                            android:text="Ugly duckling"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
 
@@ -150,7 +192,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="20dp"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="#443831"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="15dp">
 
@@ -161,17 +203,30 @@
 
                     <ImageView
                         android:id="@+id/imageViewStory4"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/magicflutecover" />
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:text="Story four" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:fontFamily="casual"
+                            android:text="The magic flute"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
 
@@ -181,7 +236,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="20dp"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="#CA9B31"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="15dp">
 
@@ -192,17 +247,32 @@
 
                     <ImageView
                         android:id="@+id/imageViewStory5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/midascover" />
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:text="Story five" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:fontFamily="casual"
+                            android:text="King Midas and the magic touch"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
 
