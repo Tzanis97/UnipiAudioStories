@@ -27,7 +27,8 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             app:navigationIcon="@android:drawable/arrow_down_float"
-            app:title="Menu" />
+            app:title="Audio Stories Menu"
+            app:titleTextColor="@color/white"/>
     </com.google.android.material.appbar.AppBarLayout>
 
 

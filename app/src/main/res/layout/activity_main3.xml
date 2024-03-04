@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
-            android:hint="Username"
+            android:hint="Email"
             android:inputType="text" />
 
         <EditText
@@ -73,6 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
+                android:onClick="signup"
                 android:text="Sign-Up" />
 
             <Button
@@ -80,6 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
+                android:onClick="signin"
                 android:text="Sign-In" />
         </LinearLayout>
     </LinearLayout>

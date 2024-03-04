@@ -3,6 +3,7 @@ package com.example.unipiaudiostories;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -19,6 +20,8 @@ import androidx.cardview.widget.CardView;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,6 +40,9 @@ public class MainActivity2 extends AppCompatActivity {
     FirebaseDatabase database;
     StorageReference storage;
     DatabaseReference databaseReference;
+    FirebaseAuth mAuth;
+    FirebaseUser user;
+    SharedPreferences userPreference;
     MyTts myTts;
     TextView descr;
     ImageView cover;
@@ -71,6 +77,14 @@ public class MainActivity2 extends AppCompatActivity {
         getSupportActionBar().setTitle(b.getString("TopbarTitle"));
         storyToolbar.showOverflowMenu();
 
+        //authentication and user initializing
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+
+        //get current user's preference
+        if (user!=null) {
+            userPreference = getSharedPreferences(user.getUid() + "_preferences", MODE_PRIVATE);
+        }
         //database and storage setup
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance().getReference();
@@ -116,6 +130,13 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void listen(View view){
+        //increase listen counter of the story by 1 for this user
+        SharedPreferences.Editor editor = userPreference.edit();
+        int currentCounter = userPreference.getInt(keyTitle,0);
+        currentCounter++;
+        editor.putInt(keyTitle,currentCounter);
+        editor.apply();
+
         //Break the text to chunks less than 4000chars in order myTts to be able to put them in queue
         List<String> textChunks = TextSplit.splitText(descr.getText().toString());
         for (String chunk : textChunks) {

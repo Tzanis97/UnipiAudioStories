@@ -6,9 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.Firebase;
@@ -36,6 +40,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Toolbar Config
+        Toolbar toolbar = findViewById(R.id.materialToolbar2);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopupMenu(v);
+            }
+        });
+
+        //Initialize views
         redhood = findViewById(R.id.redHoodTextView);
         cinderella = findViewById(R.id.cinderellaTextView);
         duckling = findViewById(R.id.DuckingTextView);
@@ -46,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         ducklingImage = findViewById(R.id.imageStory3);
         fluteImage = findViewById(R.id.imageViewStory4);
         midasImage = findViewById(R.id.imageViewStory5);
+
+        //Firebase Config
         database = FirebaseDatabase.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
         redhoodReference = database.getReference("RedHood");
@@ -149,7 +167,37 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //setup pop-up menu when the navigation icon is clicked
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        popupMenu.inflate(R.menu.top_bar_main_menu);
+//        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                // Handle item selection
+//                switch (item.getItemId()) {
+//                    case :
+//                        Intent intent = new Intent(MainActivity.this, MainActivity4.class);
+//                        startActivity(intent);
+//                        return true;
+//                    default:
+//                        return false;
+//                }
+//            }
+//        });
+        popupMenu.show();
+    }
 
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.top_bar_main_menu,menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        return super.onOptionsItemSelected(item);
+//    }
 
     public void goCinderella(View view){
         Intent intent = new Intent(this,MainActivity2.class);
