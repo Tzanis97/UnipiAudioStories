@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UnipiAudioStories</string>
+    <string name="welcome_to_audio_stories">Bienvenue dans les Audio Stories</string>
+    <string name="email">Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="sign_up">S\'inscrire</string>
+    <string name="sign_in">"Se connecter "</string>
+    <string name="stories_to_pick_and_listen">Choisissez et écoutez une histoire disponible</string>
+    <string name="little_red_riding_hood">Le Petit Chaperon Rouge</string>
+    <string name="cinderella">Cendrillon</string>
+    <string name="ugly_duckling">Vilain Petit Canard</string>
+    <string name="the_magic_flute">La Flûte Magique</string>
+    <string name="king_midas">Le Roi Midas</string>
+    <string name="listen">Choisissez l\'histoire</string>
+    <string name="start">Commencer d\'écouter</string>
+    <string name="see_full_text">Voir le texte intégral</string>
+    <string name="statistics_and_favourites">Statistiques et Favoris</string>
+    <string name="story_name">Nom de l\'histoire</string>
+    <string name="times_listened">Temps d\'écoute</string>
+    <string name="favorites">Favoris</string>
+    <string name="add_to_favourites">Ajouter aux Favoris</string>
+    <string name="voice_command">Commande vocale</string>
+    <string name="stop_listening">Arrêtez d\'écouter</string>
+    <string name="language_selection">Sélection de la langue</string>
+    <string name="greek">Grecque</string>
+    <string name="english">Anglaise</string>
+    <string name="french">Français</string>
+</resources>

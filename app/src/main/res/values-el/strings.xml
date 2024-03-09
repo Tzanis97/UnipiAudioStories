@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UnipiAudioStories</string>
+    <string name="welcome_to_audio_stories">Καλώς ήρθατε στο Audio Stories</string>
+    <string name="email">Διεύθυνση ηλεκτρονικού ταχυδρομείου</string>
+    <string name="password">Κωδικός πρόσβασης</string>
+    <string name="sign_up">Εγγραφή</string>
+    <string name="sign_in">Σύνδεση</string>
+    <string name="stories_to_pick_and_listen">Επιλέξτε και ακούστε μια από τις διαθέσιμες ιστερίες</string>
+    <string name="little_red_riding_hood">Η Κοκκινοσκουφίτσα</string>
+    <string name="cinderella">Η Σταχτοπούτα</string>
+    <string name="ugly_duckling">Το Ασχημόπαπο</string>
+    <string name="the_magic_flute">Ο Μαγικός Αυλός</string>
+    <string name="king_midas">Ο Βασιλιάς Μίδας</string>
+    <string name="listen">Προεσκόπιση</string>
+    <string name="start">Έναρξη ακρόασης</string>
+    <string name="see_full_text">Δείτε ολόκληρο το κείμενο</string>
+    <string name="statistics_and_favourites">Στατιστικά και Αγαπημένα</string>
+    <string name="story_name">Τίτλος</string>
+    <string name="times_listened">Πλήθος ακροάσεων</string>
+    <string name="favorites">Αγαπημένα</string>
+    <string name="add_to_favourites">Προσθήκη στα αγαπημένα</string>
+    <string name="voice_command">Φωνητική εντολή</string>
+    <string name="stop_listening">Τερματισμός ακρόασης</string>
+    <string name="language_selection">Επιλογή γλώσσας</string>
+    <string name="greek">"Ελληνικά "</string>
+    <string name="english">Αγγλικά</string>
+    <string name="french">Γαλλικά</string>
+</resources>

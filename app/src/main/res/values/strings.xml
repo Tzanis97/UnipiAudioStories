@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">UnipiAudioStories</string>
+    <string name="welcome_to_audio_stories">Welcome to Audio Stories</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign-Up</string>
+    <string name="sign_in">Sign-In</string>
+    <string name="stories_to_pick_and_listen">Pick and listen an available story</string>
+    <string name="little_red_riding_hood">Little Red Riding Hood</string>
+    <string name="listen">Pick Story</string>
+    <string name="cinderella">Cinderella</string>
+    <string name="ugly_duckling">Ugly Duckling</string>
+    <string name="the_magic_flute">The Magic Flute</string>
+    <string name="king_midas">King Midas</string>
+    <string name="start">Start listening</string>
+    <string name="stop_listening">Stop listening</string>
+    <string name="see_full_text">See full text</string>
+    <string name="statistics_and_favourites">Statistics and Favourites</string>
+    <string name="story_name">Story name</string>
+    <string name="times_listened">Times Listened</string>
+    <string name="favorites">Favorites</string>
+    <string name="add_to_favourites">Add to favourites</string>
+    <string name="voice_command">Voice command</string>
+    <string name="unipi_audio_stories" translatable="false">Audio Stories</string>
+    <string name="language_selection">Language selection</string>
+    <string name="greek">Greek</string>
+    <string name="english">English</string>
+    <string name="french">French</string>
 </resources>

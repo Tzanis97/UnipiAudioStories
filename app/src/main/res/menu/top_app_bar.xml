@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/favorites"
-        android:title="Add to favourites"
-        android:icon="@android:drawable/ic_menu_add"
-        android:contentDescription="Add to favourites"
+        android:title="@string/add_to_favourites"
+        android:contentDescription="@string/add_to_favourites"
+        android:icon="@drawable/favorite"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/speak"
-        android:title="Voice command"
+        android:id="@+id/voicetostats"
+        android:title="@string/voice_command"
         android:icon="@android:drawable/ic_btn_speak_now"
         app:showAsAction="ifRoom"/>
 

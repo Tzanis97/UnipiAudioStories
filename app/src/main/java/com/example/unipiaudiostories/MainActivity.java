@@ -4,14 +4,20 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.window.OnBackInvokedDispatcher;
+
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,18 +33,23 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     StorageReference storageReference;
     DatabaseReference redhoodReference,cinderellaReference,ducklingReference,fluteReference,midasReference;
-
+    SharedPreferences languagePreference;
     TextView redhood,cinderella,duckling,flute,midas;
     ImageView redhoodImage,cinderellaImage,ducklingImage,fluteImage,midasImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Check if language preference is set, otherwise set default to English
+        languagePreference = getSharedPreferences("language",MODE_PRIVATE);
+        String savedLang = languagePreference.getString("language", "en");
+        setLocale(savedLang);
         setContentView(R.layout.activity_main);
 
         //Toolbar Config
@@ -165,72 +176,120 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {}
         });
+
+//        // Check if language preference is set, otherwise set default to English
+//        languagePreference = getSharedPreferences("language",MODE_PRIVATE);
+//        String savedLang = languagePreference.getString("language","en");
+//        if (savedLang.isEmpty()) {
+//            setLocale("en");
+//        } else {
+//            setLocale(savedLang);
+//        }
     }
 
     //setup pop-up menu when the navigation icon is clicked
     private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);
         popupMenu.inflate(R.menu.top_bar_main_menu);
-//        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-//                // Handle item selection
-//                switch (item.getItemId()) {
-//                    case :
-//                        Intent intent = new Intent(MainActivity.this, MainActivity4.class);
-//                        startActivity(intent);
-//                        return true;
-//                    default:
-//                        return false;
-//                }
-//            }
-//        });
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                // Handle item selection
+                if (item.getItemId() == R.id.statistics) {
+                        Intent intent = new Intent(MainActivity.this, MainActivity4.class);
+                        startActivity(intent);
+                        return true;}
+                else if (item.getItemId() == R.id.greek) {
+                    saveLanguage("el");
+                    setLocale("el");
+                    recre();
+                    return true;
+                }
+                else if (item.getItemId() == R.id.english) {
+                    saveLanguage("en");
+                    setLocale("en");
+                    recre();
+                    return true;
+                }
+                else if (item.getItemId() == R.id.french) {
+                    saveLanguage("fr");
+                    setLocale("fr");
+                    recre();
+                    return true;
+                }
+                else{
+                        return false;
+                }
+            }
+        });
         popupMenu.show();
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.top_bar_main_menu,menu);
-//        return super.onCreateOptionsMenu(menu);
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        return super.onOptionsItemSelected(item);
-//    }
 
     public void goCinderella(View view){
         Intent intent = new Intent(this,MainActivity2.class);
         intent.putExtra("Title","Cinderella");
-        intent.putExtra("TopbarTitle",cinderella.getText().toString());
+        intent.putExtra("TopbarTitle",2);
         startActivity(intent);
     }
 
     public void goRedHood(View view){
         Intent intent = new Intent(this,MainActivity2.class);
         intent.putExtra("Title","RedHood");
-        intent.putExtra("TopbarTitle",redhood.getText().toString());
+        intent.putExtra("TopbarTitle",1);
         startActivity(intent);
     }
 
     public void goUgly(View view){
         Intent intent = new Intent(this,MainActivity2.class);
         intent.putExtra("Title","UglyDuckling");
-        intent.putExtra("TopbarTitle",duckling.getText().toString());
+        intent.putExtra("TopbarTitle",3);
         startActivity(intent);
     }
 
     public void goFlute(View view){
         Intent intent = new Intent(this,MainActivity2.class);
         intent.putExtra("Title","MagicFlute");
-        intent.putExtra("TopbarTitle",flute.getText().toString());
+        intent.putExtra("TopbarTitle",4);
         startActivity(intent);
     }
 
     public void goMidas(View view){
         Intent intent = new Intent(this,MainActivity2.class);
         intent.putExtra("Title","Midas");
-        intent.putExtra("TopbarTitle",midas.getText().toString());
+        intent.putExtra("TopbarTitle",5);
         startActivity(intent);
+    }
+
+    //method to apply the selected language
+    public void setLocale(String lang) {
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
+    }
+
+    // Method to save language preference to SharedPreferences
+    private void saveLanguage(String lang) {
+        SharedPreferences.Editor editor = languagePreference.edit();
+        editor.putString("language",lang);
+        editor.apply();
+    }
+
+    //method to refresh the activity
+    public void recre(){
+        this.recreate();
+    }
+    //when the user comes back to this activity recreate to to update to the correct language
+    protected void onRestart() {
+        super.onRestart();
+        recre();
+    }
+    //dont let the user close the app by pressing back button
+    @Override
+    public void onBackPressed() {
+        if(false){
+            super.onBackPressed();}
     }
 }

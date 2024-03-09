@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/statsandfavs"
-        android:title="Stats and favourites"
-        android:icon="@android:drawable/ic_menu_add"
-        android:contentDescription="Add to favourites"/>
+        android:id="@+id/statistics"
+        android:title="@string/statistics_and_favourites"
+        android:icon="@android:drawable/ic_menu_add"/>
+    <item android:id="@+id/language"
+        android:title="@string/language_selection">
+        <menu
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <item
+                android:id="@+id/greek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:title="@string/greek" />
+            <item
+                android:id="@+id/english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:title="@string/english" />
+            <item
+                android:id="@+id/french"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:title="@string/french" />
+        </menu>
+    </item>
 </menu>

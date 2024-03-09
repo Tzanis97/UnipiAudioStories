@@ -26,9 +26,10 @@
             android:background="@android:color/transparent"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            app:navigationIcon="@android:drawable/arrow_down_float"
-            app:title="Audio Stories Menu"
-            app:titleTextColor="@color/white"/>
+            app:navigationIcon="@drawable/baseline_menu_24"
+            app:title="@string/unipi_audio_stories"
+            app:titleTextColor="@color/white"
+            app:menu="@menu/top_bar_main_menu"/>
     </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -49,14 +50,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="Stories to pick and listen"
+        android:text="@string/stories_to_pick_and_listen"
         android:textColor="#FEFEFE"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView" />
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:gravity="center_horizontal"/>
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -109,7 +111,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
                         android:fontFamily="casual"
-                        android:text="Little red riding hood"
+                        android:text="@string/little_red_riding_hood"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -119,7 +121,7 @@
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/white"
                             android:onClick="goRedHood"
-                            android:text="See story"
+                            android:text="@string/listen"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
@@ -165,7 +167,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="10dp"
                             android:fontFamily="casual"
-                            android:text="Cinderella"
+                            android:text="@string/cinderella"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -176,7 +178,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:onClick="goCinderella"
-                            android:text="See story"
+                            android:text="@string/listen"
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:backgroundTint="@color/white"/>
@@ -221,7 +223,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="10dp"
                             android:fontFamily="casual"
-                            android:text="Ugly duckling"
+                            android:text="@string/ugly_duckling"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -231,7 +233,7 @@
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/white"
                             android:onClick="goUgly"
-                            android:text="See story"
+                            android:text="@string/listen"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
@@ -276,7 +278,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="10dp"
                             android:fontFamily="casual"
-                            android:text="The magic flute"
+                            android:text="@string/the_magic_flute"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -287,7 +289,7 @@
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/white"
                             android:onClick="goFlute"
-                            android:text="See story"
+                            android:text="@string/listen"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
@@ -331,7 +333,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="10dp"
                             android:fontFamily="casual"
-                            android:text="King Midas and the magic touch"
+                            android:text="@string/king_midas"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
@@ -343,7 +345,7 @@
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/white"
                             android:onClick="goMidas"
-                            android:text="See story"
+                            android:text="@string/listen"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
