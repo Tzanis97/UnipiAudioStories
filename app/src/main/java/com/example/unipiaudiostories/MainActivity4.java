@@ -113,7 +113,6 @@ public class MainActivity4 extends AppCompatActivity {
         // Iterate through each story key for the user
         for (String storyKey : storyKeys) {
             // Get the number of times the story has been listened to
-//            String timesListened = String.valueOf(userPreference.getInt(storyKey + "_times_listened", 0));
             database.getReference().child("users").child(user.getUid()).child("timesListened").child(storyKey).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -144,8 +143,7 @@ public class MainActivity4 extends AppCompatActivity {
             });
 
 
-//            // Get the favorite status of the story
-//            boolean isFavorite = userPreference.getBoolean(storyKey + "_favorite", false);
+            // Get the favorite status of the story
             database.getReference().child("users").child(user.getUid()).child("favorites").child(storyKey).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {

@@ -26,4 +26,11 @@
     <string name="greek">Greek</string>
     <string name="english">English</string>
     <string name="french">French</string>
+    <string name="success">Success</string>
+    <string name="error">Error</string>
+    <string name="profilecreated">Your profile is created!</string>
+    <string name="usersignedin">You signed in! Press OK to continue.</string>
+    <string name="pleaseprovidesignup">Please provide email and password to create your profile!</string>
+    <string name="pleaseprovidesignin">Please provide valid email and password</string>
+    <string name="showstatsvoice">show me my statistics</string>
 </resources>

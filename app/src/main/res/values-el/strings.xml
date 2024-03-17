@@ -6,7 +6,7 @@
     <string name="password">Κωδικός πρόσβασης</string>
     <string name="sign_up">Εγγραφή</string>
     <string name="sign_in">Σύνδεση</string>
-    <string name="stories_to_pick_and_listen">Επιλέξτε και ακούστε μια από τις διαθέσιμες ιστερίες</string>
+    <string name="stories_to_pick_and_listen">Επιλέξτε και ακούστε μια από τις διαθέσιμες ιστορίες</string>
     <string name="little_red_riding_hood">Η Κοκκινοσκουφίτσα</string>
     <string name="cinderella">Η Σταχτοπούτα</string>
     <string name="ugly_duckling">Το Ασχημόπαπο</string>
@@ -26,4 +26,11 @@
     <string name="greek">"Ελληνικά "</string>
     <string name="english">Αγγλικά</string>
     <string name="french">Γαλλικά</string>
+    <string name="success">Επιτυχία</string>
+    <string name="error">Σφάλμα</string>
+    <string name="pleaseprovidesignup">Παρακαλώ, εισάγετε όνομα χρήστη και κωδικό για να δημιουργήσετε το προφίλ σας</string>
+    <string name="pleaseprovidesignin">Δεν υπάρχει καταχωρημένος χρήστης με τα δοθέντα στοιχεία</string>
+    <string name="profilecreated">Το προφίλ σας δημιοργήθηκε επιτυχώς!</string>
+    <string name="usersignedin">Συνδεθήκατε επιτυχώς ! Πιέστε το OK για να συνεχίσετε.</string>
+    <string name="showstatsvoice">δείξε μου τα στατιστικά μου</string>
 </resources>

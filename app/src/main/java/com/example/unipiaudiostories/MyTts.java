@@ -12,7 +12,6 @@ public class MyTts {
         public void onInit(int status) {
             if (status==TextToSpeech.SUCCESS){
                 tts.setLanguage(Locale.ENGLISH);
-                //tts.setLanguage(Locale.forLanguageTag("el"));
             }
         }
     };

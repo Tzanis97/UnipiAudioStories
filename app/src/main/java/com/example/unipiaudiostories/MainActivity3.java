@@ -56,12 +56,6 @@ public class MainActivity3 extends AppCompatActivity {
         //authorization
         mAuth = FirebaseAuth.getInstance();
 
-//        // Check if language preference is set, otherwise set default to English
-//        languagePreference = getSharedPreferences("language",MODE_PRIVATE);
-//        String savedLang = languagePreference.getString("language", "en");
-//        if (!savedLang.equals("el")){
-//            setLocale(savedLang);
-//        }
         //Toolbar Config
         Toolbar toolbar = findViewById(R.id.materialToolbar2);
         setSupportActionBar(toolbar);
@@ -86,17 +80,16 @@ public class MainActivity3 extends AppCompatActivity {
                     if (task.isSuccessful()){
                         user = mAuth.getCurrentUser();
                         Intent intent = new Intent(MainActivity3.this, MainActivity.class);
-                        showMessage("Success","User signed in!",intent);
+                        showMessage(getResources().getString(R.string.success),getResources().getString(R.string.usersignedin),intent);
                     } else{
                         //the task will note us on what is wrong
-                        showMessage("Error",task.getException().getLocalizedMessage(),null);
+                        showMessage(getResources().getString(R.string.error),task.getException().getLocalizedMessage(),null);
                     }
                 }
             });
         } else {
-            showMessage("Error","Please provide valid email or password!",null);
+            showMessage(getResources().getString(R.string.error),getResources().getString(R.string.pleaseprovidesignin),null);
         }
-        //mAuth.signOut();
     }
 
     public void signup(View view){
@@ -107,8 +100,6 @@ public class MainActivity3 extends AppCompatActivity {
                     if (task.isSuccessful()){
                         user = mAuth.getCurrentUser();
 
-                        //create new SharedPreference for keeping user stats and favs
-                        //this will be stored locally in the users device
                         if (user!=null){
                             String userId = user.getUid();
                             DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users");
@@ -116,40 +107,26 @@ public class MainActivity3 extends AppCompatActivity {
                             userRef.setValue(userId);
                             //update the userRef to target the root of new users node
                             userRef = userRef.child(userId);
-
-
-//                            SharedPreferences userPreference = getSharedPreferences(userId+"_preferences",MODE_PRIVATE);
-//                            SharedPreferences.Editor editor = userPreference.edit();
                             String[] storyKeys = {"RedHood", "Cinderella", "UglyDuckling","MagicFlute","Midas"};
 
                             // Iterate through each story key for the user
                             for (String storyKey : storyKeys) {
                                 // Sample favorite and times listened values
-//                                boolean favorite = false; // Example: Replace with logic to determine if it's a favorite
-//                                int timesListened = 0; // Example: Replace with actual value
-
-//                                // Store the values in SharedPreferences
-//                                editor.putBoolean(storyKey + "_favorite", favorite);
-//                                editor.putInt(storyKey + "_times_listened", timesListened);
                                 userRef.child("favorites").child(storyKey).setValue(false);
                                 userRef.child("timesListened").child(storyKey).setValue(0);
                             }
-
-//                            // Commit changes
-//                            editor.apply();
                         }
                         Intent intent = new Intent(MainActivity3.this, MainActivity.class);
-                        showMessage("Success","Your profile is created!",intent);
+                        showMessage(getResources().getString(R.string.success),getResources().getString(R.string.profilecreated),intent);
                     } else{
                         //what is wrong the task will note us
-                        showMessage("Error",task.getException().getLocalizedMessage(),null);
+                        showMessage(getResources().getString(R.string.error),task.getException().getLocalizedMessage(),null);
                     }
                 }
             });
         } else {
-            showMessage("Error","Please provide email and password!",null);
+            showMessage(getResources().getString(R.string.error),getResources().getString(R.string.pleaseprovidesignup),null);
         }
-        //mAuth.signOut();
     }
 
     //setup pop-up menu when the navigation icon is clicked

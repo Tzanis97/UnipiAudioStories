@@ -176,15 +176,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {}
         });
-
-//        // Check if language preference is set, otherwise set default to English
-//        languagePreference = getSharedPreferences("language",MODE_PRIVATE);
-//        String savedLang = languagePreference.getString("language","en");
-//        if (savedLang.isEmpty()) {
-//            setLocale("en");
-//        } else {
-//            setLocale(savedLang);
-//        }
     }
 
     //setup pop-up menu when the navigation icon is clicked

@@ -124,11 +124,6 @@ public class MainActivity2 extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
 
-//        //get current user's preference
-//        if (user!=null) {
-//            userPreference = getSharedPreferences(user.getUid() + "_preferences", MODE_PRIVATE);
-//        }
-
         //database and storage setup
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance().getReference();
@@ -160,20 +155,6 @@ public class MainActivity2 extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {}
         });
 
-
-//        //get user's current story favorite status
-//        userfavRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                while (isFavorite==null){
-//                    isFavorite = snapshot.getValue(Boolean.class);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {}
-//        });
-
         //listener in order for the user to be able to see or hide story's full text
         seeText.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -192,10 +173,6 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.top_app_bar, menu);
         this.menu = menu;
-        //icon of favorites toolbar option in order for the user to know if current story is in favorites or not
-//        if (isFavorite == null) {
-//            favoriteItem.setIcon(R.drawable.favorite); // Set your default icon here
-//        }
         onPrepareOptionsMenu(menu);
         return true;
     }
@@ -329,6 +306,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         invalidateOptionsMenu();
+        recre();
     }
     //    private void updateFavoriteIcon() {
 //        MenuItem favoriteItem = menu.findItem(R.id.favorites);
@@ -349,14 +327,13 @@ public class MainActivity2 extends AppCompatActivity {
         if(requestCode==123  && resultCode==RESULT_OK){
             ArrayList<String> recognisedText = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
             try{
-                if (recognisedText.get(0).equals("δείξε μου τα στατιστικά μου")){
+                if (recognisedText.get(0).equals(getResources().getString(R.string.showstatsvoice))){
                     Intent intent = new Intent(MainActivity2.this, MainActivity4.class);
                     startActivity(intent);
                 }
             } catch (IllegalAccessError e){
                 showMessage("Error","Not valid message, try again");
             }
-            showMessage("Recognised Text",recognisedText.toString());
         }
     }
     //method to apply the new selected language
