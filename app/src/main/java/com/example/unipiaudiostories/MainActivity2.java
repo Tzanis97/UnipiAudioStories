@@ -308,18 +308,6 @@ public class MainActivity2 extends AppCompatActivity {
         invalidateOptionsMenu();
         recre();
     }
-    //    private void updateFavoriteIcon() {
-//        MenuItem favoriteItem = menu.findItem(R.id.favorites);
-//        if (favoriteItem != null) {
-//            // Update the favorite icon based on the preference
-//            if (isFavorite == null) {
-//                favoriteItem.setIcon(R.drawable.favorite); // Set your default icon here
-//            } else {
-//                // Set the appropriate icon based on the isFavorite value
-//                favoriteItem.setIcon(isFavorite ? R.drawable.filledfavorite : R.drawable.favorite);
-//            }
-//        }
-//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
