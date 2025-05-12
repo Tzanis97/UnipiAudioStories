@@ -50,7 +50,4 @@
 - **Material Design UI Components**
 
 ## Walkthrough Video
-[Watch the demo](#) (in greek) *https://drive.google.com/file/d/1ev0eTnz74_4d2cUmTWdTnOipoq0Tw4WU/view?usp=sharing*
-
-## Contributors
-- **Tsialouki Lina** *https://github.com/tsili96*
+[Watch the demo](https://drive.google.com/file/d/1ev0eTnz74_4d2cUmTWdTnOipoq0Tw4WU/view?usp=sharing) (in greek) 
